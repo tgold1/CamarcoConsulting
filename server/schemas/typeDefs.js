@@ -32,7 +32,7 @@ type Auth{
     user: User
 }
 type Query{
-    
+   Projects: [Project] 
 }
 `
 

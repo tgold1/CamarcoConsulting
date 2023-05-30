@@ -1,7 +1,11 @@
-const{ Invoice, Project, User } = require('../models')
+const { Invoice, Project, User } = require('../models')
 
-const resolvers={
-
+const resolvers = {
+    Query: {
+        Projects: async () => {
+            return await Project.find({})
+        }
+    }
 };
 
-module.exports=resolvers;
+module.exports = resolvers;
