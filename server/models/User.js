@@ -19,6 +19,14 @@ const userSchema=new Schema({
         required: true
         //for detirming if the user is an employee or not
         //falsu = not an employee
+    },
+    projects:{
+        type: Schema.Types.ObjectId,
+        ref:'Project'
+    },
+    invoices:{
+        type: Schema.Types.ObjectId,
+        ref:'Invoice'
     }
 
     // add section for projects, section for invoice
