@@ -2,7 +2,7 @@ const { Schema, model } = require('mongoose');
 const bcrypt = require('bcrypt');
 
 const userSchema=new Schema({
-    userName:{
+    username:{
         type: String,
         required: true,
         unique: true,
@@ -12,6 +12,12 @@ const userSchema=new Schema({
         type: String,
         required: true,
         minlength: 5,
+    },
+    email:{
+        type: String,
+        required: true,
+        unique: true,
+        match: [/.+@.+\..+/, 'Must match an email address!'],
     },
     userRole:{
         type: Boolean,
@@ -29,7 +35,6 @@ const userSchema=new Schema({
         ref:'Invoice'
     }
 
-    // add section for projects, section for invoice
 })
 
 const User = model('User', userSchema);
