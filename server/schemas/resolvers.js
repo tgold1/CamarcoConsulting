@@ -10,6 +10,9 @@ const resolvers = {
         Invoices: async ()=>{
             return await User.findOne({_id}).populate('invoices')
         },
+        Users: async ()=>{
+            return await User.find({})
+        }
     },
 
     Mutation:{
