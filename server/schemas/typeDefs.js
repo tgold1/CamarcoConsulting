@@ -27,6 +27,13 @@ type Project{
     endDate: Date
     customer: [User]!
 }
+type Auth{
+    token: ID!
+    user: User
+}
+type Query{
+    
+}
 `
 
 module.exports=typeDefs
