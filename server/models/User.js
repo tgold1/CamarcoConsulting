@@ -15,8 +15,13 @@ const userSchema=new Schema({
     },
     userRole:{
         type: Boolean,
+        default: false,
         required: true
+        //for detirming if the user is an employee or not
+        //falsu = not an employee
     }
+
+    // add section for projects, section for invoice
 })
 
 const User = model('User', userSchema);
