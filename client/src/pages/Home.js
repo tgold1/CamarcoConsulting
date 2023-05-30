@@ -14,7 +14,7 @@ const Home = () => {
           <li>Business analysis</li>
           <li>Technology consulting</li>
           <li>Process & Workflow Automation</li>
-            </ul>
+        </ul>
         <p>
           We work closely with our clients to understand their unique needs and challenges, and tailor our solutions to help them achieve their goals. Whether it's improving operational efficiency, implementing new technologies, or developing effective strategies, our experienced team is here to support your business every step of the way.
         </p>
@@ -30,7 +30,7 @@ const Home = () => {
           <li>TBD</li>
           <li>TBD</li>
           <li>TBD</li>
-     
+
         </ul>
         <p>
           We stay up-to-date with the latest industry trends and best practices to ensure that our clients receive the most relevant and effective solutions. Our team's diverse skill set enables us to address complex business challenges and deliver measurable results.
