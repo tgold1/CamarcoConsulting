@@ -19,3 +19,24 @@ const Login = (props) => {
             [name]: value,
         });
     };
+
+    const handleFormSubmit = async (event) => {
+        event.preventDefault();
+        console.log(formState);
+        try {
+            const {data } = await login ({
+                variables: { ...formState }.
+            });
+
+            Auth.login(data.login.token);
+        } catch (e) {
+            console.error(e);
+        }
+
+        setFormState({
+            email: '',
+            password: '',
+        });
+    };
+
+    
