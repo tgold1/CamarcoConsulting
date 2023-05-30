@@ -23,8 +23,13 @@ const invoiceSchema = new Schema({
     type: Boolean,
     default: false,
   },
+  stripePaymentIntentId: {
+    type: String,
+  },
 });
 
 const Invoice = model('Invoice', invoiceSchema);
 
 module.exports = Invoice;
+
+// MAKE SURE TO RUN NPM INSTALL STRIPE
