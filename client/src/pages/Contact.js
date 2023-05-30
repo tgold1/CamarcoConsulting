@@ -7,10 +7,27 @@ import { ADD_CONTACT} from '../../utils/mutations';
 import Auth from '../../utils/auth';
 
 const ContactForm = () => {
-    const [contactMessage, setContactMessag] = useState('');
+    const [contactMessage, setContactMessage] = useState('');
     const [contactName, setContactName] = useState('');
     const [contactEmail, setContactEmail] = useState('');
 
-   
+    const [addContact, { error }] = useMutation(ADD_CONTACT);
+
+    const handleFormSubmit = async (event) => {
+        event.preventDefault();
+
+        try {
+            const { data } = await addContact({
+                variables: {
+                    contactMessage,
+                    contactEmail,
+                    contactName,
+                },
+            });
+            setContactMessage('')
+        } catch (err) {
+          console.error(err);
+        }
+    };
 }
 
