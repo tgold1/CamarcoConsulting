@@ -92,9 +92,15 @@ const resolvers = {
             }
             throw new AuthenticationError('You need to be logged in!')
         },
-        updateInvoice: async (parent, {id, amount, currency, dueDate, Paid}, context) => {
+        updateInvoice: async (parent, {id, amount, currency, dueDate, paid}, context) => {
             return await Invoice.findOneAndUpdate(
                 {_id:id},
+                {amount},
+                {currency},
+                {dueDate},
+                {paid},
+                {new: true}
+
             )
         }
 
