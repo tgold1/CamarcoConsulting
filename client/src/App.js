@@ -5,7 +5,7 @@ import {
   ApolloClient,
   InMemoryCache,
   ApolloProvider,
-  createHttplink, 
+  createHttpLink, 
 } from '@apollo/client';
 
 import { setContext } from '@apollo/client/link/context';
@@ -20,7 +20,7 @@ import Casestudies from './pages/Casestudies';
 import Header from './components/Header';
 import Footer from './components/Footer';
 
-const httpLink = createHttplink({
+const httpLink = createHttpLink({
   uri: '/graphql',
 });
 
