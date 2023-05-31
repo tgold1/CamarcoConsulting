@@ -36,5 +36,3 @@ const invoiceSchema = new Schema({
 const Invoice = model('Invoice', invoiceSchema);
 
 module.exports = Invoice;
-
-// MAKE SURE TO RUN NPM INSTALL STRIPE
