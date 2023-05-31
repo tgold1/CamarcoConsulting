@@ -38,16 +38,40 @@ const resolvers = {
 
             return { token, user };
         },
-        addProject: async (parent,{Project.body}, context) => {
+        addProject: async (parent, { title, description, stateDate, endDate,}, context) => {
             if (context.user){
                 const project = await Project.create({
-                    project.body,
+                    title, 
+                    description, 
+                    stateDate, 
+                    endDate, 
+                    company: context.user.company,
                 });
                 await User.findOneAndUpdate(
                     {_id:context.user._id},
                     {$addToSet:{projects: project._id}}
                 )
+                return project
             }
+            throw new AuthenticationError('you need to be logged in!')
+        },
+        addInvoice: async (parent, {project, amount, currency, dueDate, Paid,}, context) => {
+            if (context.user){
+                const invoice = await Invoice.create({
+                    project, 
+                    amount, 
+                    currency, 
+                    dueDate, 
+                    Paid, 
+                    employee: context.user.employee
+                });
+                await User.findOneAndUpdate(
+                    {_id:context.user._id},
+                    {$addToSet:{invoices: invoice._id}}
+                )
+                return invoice
+            }
+            throw new AuthenticationError('you need to be logged in!')
         }
 
     }
