@@ -1,3 +1,5 @@
+// CSS FOR CASE STUDIES = CAROUSEL
+
 import React from 'react';
 
 const CaseStudies = () => {
@@ -5,13 +7,13 @@ const CaseStudies = () => {
     {
       title: 'Case Study 1',
       description: 'Description of case study 1',
-      image: 'image-url-1.jpg',
+      // image: 'image-url-1.jpg',
     
     },
     {
       title: 'Case Study 2',
       description: 'Description of case study 2',
-      image: 'image-url-2.jpg',
+      // image: 'image-url-2.jpg',
       
     },
   ];
@@ -32,5 +34,3 @@ const CaseStudies = () => {
 };
 
 export default CaseStudies;
-
-// CASE STUDIES SHOULD BE A CAROUSEL
