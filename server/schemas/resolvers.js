@@ -72,7 +72,21 @@ const resolvers = {
                 return invoice
             }
             throw new AuthenticationError('you need to be logged in!')
-        }
+        },
+        removeProject: async (parent,{projectId}, context) =>{
+            if (context.user){
+                const project = await Project.findOneAndDelete({
+                    _id: thoughtId,
+                    // figureout context
+                });
+                await user.findOneAndUpdate(
+                    {_id: context.user._id},
+                    {$pull: {projects: project._id}}
+                )
+                return project
+            }
+            throw new AuthenticationError('You need to be logged in!')
+        },
 
     }
 };
