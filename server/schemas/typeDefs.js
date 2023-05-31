@@ -42,6 +42,7 @@ type Mutation{
     addInvoice(project: ID, amount: Number!, currency: String!, dueDate: Date!, paid: Boolean!,  ): Invoice
     removeProject(projectId: ID!): Project
     updateInvoice( amount: Number!, currency: String!, dueDate: Date!, paid: Boolean!): Invoice
+    updateUser(role: Boolean!): User
 }
 `
 

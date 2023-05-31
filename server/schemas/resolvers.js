@@ -102,7 +102,15 @@ const resolvers = {
                 {new: true}
 
             )
+        },
+        updateUser: async (parent, {id, role}) => {
+            return await User.findOneAndUpdate(
+                {_id: id},
+                {role},
+                {new:true}
+            )
         }
+
 
     }
 };
