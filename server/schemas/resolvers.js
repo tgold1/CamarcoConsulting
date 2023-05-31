@@ -81,7 +81,7 @@ const resolvers = {
             if (context.user){
                 const project = await Project.findOneAndDelete({
                     _id: projectId,
-                    // figureout context
+                    company: context.user._id
                 });
                 await User.findOneAndUpdate(
                     {_id: context.user._id},
