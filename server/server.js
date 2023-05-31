@@ -5,7 +5,7 @@ const path = require('path');
 const { typeDefs, resolvers } = require('./schemas');
 const db = require('./config/connection');
 
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3000;
 const app = express();
 const server = new ApolloServer({
   typeDefs,
@@ -40,3 +40,4 @@ const startApolloServer = async (typeDefs, resolvers) => {
 // Call the async function to start the server
   startApolloServer(typeDefs, resolvers);
  
+""
