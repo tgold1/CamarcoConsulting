@@ -40,7 +40,7 @@ type Mutation{
     login( email: String!, password: String!): Auth
     addProject(title: String!, description: String!, startDate: Date!, endDate: Date!): Project
     addInvoice(project: , amount: Number!, currency: String!, dueDate: Date!, paid: Boolean!,  ): Invoice
-    removeProject(projectId: ID!): project
+    removeProject(projectId: ID!): Project
 }
 `
 

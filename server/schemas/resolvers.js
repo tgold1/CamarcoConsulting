@@ -5,7 +5,7 @@ const { signToken } = require('../utils/auth');
 const resolvers = {
     Query: {
         Projects: async () => {
-            return await user.findOne({ _id }).populate('projects')
+            return await User.findOne({ _id }).populate('projects')
         },
         Invoices: async () => {
             return await User.findOne({ _id }).populate('invoices')
@@ -58,7 +58,7 @@ const resolvers = {
         addInvoice: async (parent, {project, amount, currency, dueDate, Paid,}, context) => {
             if (context.user){
                 const invoice = await Invoice.create({
-                    project, 
+                    project: project.title,
                     amount, 
                     currency, 
                     dueDate, 
@@ -69,6 +69,10 @@ const resolvers = {
                     {_id:context.user._id},
                     {$addToSet:{invoices: invoice._id}}
                 )
+                await Project.findOneAndUpdate(
+                    {_id:project._id},
+                    {$addToSet:{invoices:invoice._id}}
+                )
                 return invoice
             }
             throw new AuthenticationError('you need to be logged in!')
@@ -76,13 +80,14 @@ const resolvers = {
         removeProject: async (parent,{projectId}, context) =>{
             if (context.user){
                 const project = await Project.findOneAndDelete({
-                    _id: thoughtId,
+                    _id: projectId,
                     // figureout context
                 });
-                await user.findOneAndUpdate(
+                await User.findOneAndUpdate(
                     {_id: context.user._id},
                     {$pull: {projects: project._id}}
                 )
+                //can we have multiple awaits in one function?
                 return project
             }
             throw new AuthenticationError('You need to be logged in!')
