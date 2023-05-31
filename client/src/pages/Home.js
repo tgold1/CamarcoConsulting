@@ -19,19 +19,15 @@ const Home = () => {
           We work closely with our clients to understand their unique needs and challenges, and tailor our solutions to help them achieve their goals. Whether it's improving operational efficiency, implementing new technologies, or developing effective strategies, our experienced team is here to support your business every step of the way.
         </p>
       </section>
-
+ 
       <section id="expertise">
         <h2>Expertise</h2>
         <p>
-          With years of industry experience, our team brings deep expertise in various domains. Our areas of expertise include:
+          Our expertise is enhanced by our CEO, Mickey Camarco, who has a unique perspective on the industry. Mickey Camarco has been a valued customer and employee of Nintex in the past, and their experience has given them invaluable insights into their tools and technologies. As a partner with Nintex, we leverage this deep understanding to provide our clients with exceptional solutions and results.
         </p>
-        <ul>
-          <li>TBD</li>
-          <li>TBD</li>
-          <li>TBD</li>
-          <li>TBD</li>
-
-        </ul>
+        <p>
+          Mickey Camarco's firsthand experience with Nintex allows us to offer comprehensive consulting and advisory services tailored to the specific needs of businesses. We understand how to effectively leverage Nintex's offerings to optimize processes, automate workflows, and drive operational efficiency. Our expertise, combined with our partnership with Nintex, enables us to deliver innovative and impactful solutions to our clients.
+        </p>
         <p>
           We stay up-to-date with the latest industry trends and best practices to ensure that our clients receive the most relevant and effective solutions. Our team's diverse skill set enables us to address complex business challenges and deliver measurable results.
         </p>

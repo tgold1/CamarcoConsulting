@@ -1,12 +1,10 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
+// import { ADD_CONTACT } from '../../utils/mutations.js';
+import Auth from '../utils/auth';
 
-import { ADD_CONTACT } from '../../utils/mutations';
-
-import Auth from '../../utils/auth';
-
-const ContactForm = () => {
+const Contact = () => {
     const [contactMessage, setContactMessage] = useState('');
     const [contactName, setContactName] = useState('');
     const [contactEmail, setContactEmail] = useState('');
@@ -33,7 +31,7 @@ const ContactForm = () => {
     const handleChange = (event) => {
         const { name, value } = event.target;
 
-        if (name === contactMessage) {
+        if (name === 'contactMessage') {
             setContactMessage(value);
         }
     };
@@ -48,7 +46,7 @@ const ContactForm = () => {
                     <textarea
                         name="contactMessage"
                         placeholder="Add your message..."
-                        value={commentText}
+                        value={contactMessage}
                         className="form-input w-100"
                         style={{ lineHeight: '1.5', resize: 'vertical' }}
                         onChange={handleChange}
@@ -67,3 +65,4 @@ const ContactForm = () => {
     )
 }
 
+export default Contact;

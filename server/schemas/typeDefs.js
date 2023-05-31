@@ -38,6 +38,11 @@ type Query{
 type Mutation{
     addUser(username: String!, email: String!, password: String!): Auth
     login( email: String!, password: String!): Auth
+    addProject(title: String!, description: String!, startDate: Date!, endDate: Date!): Project
+    addInvoice(project: ID, amount: Number!, currency: String!, dueDate: Date!, paid: Boolean!,  ): Invoice
+    removeProject(projectId: ID!): Project
+    updateInvoice( amount: Number!, currency: String!, dueDate: Date!, paid: Boolean!): Invoice
+    updateUser(role: Boolean!): User
 }
 `
 
