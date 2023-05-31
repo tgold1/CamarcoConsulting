@@ -34,6 +34,10 @@ class AuthService {
         localStorage.removeItem('id_token');
         window.location.reload();
     }
+    isEmployee(){
+       const user = this.getProfile()
+       return user.userRole
+    }
 }
 
 export default new AuthService();
