@@ -55,7 +55,7 @@ const resolvers = {
             }
             throw new AuthenticationError('you need to be logged in!')
         },
-        addInvoice: async (parent, {project, amount, currency, dueDate, Paid,}, context) => {
+        addInvoice: async (parent, {project, amount, currency, dueDate, Paid}, context) => {
             if (context.user){
                 const invoice = await Invoice.create({
                     project: project.title,
@@ -92,6 +92,11 @@ const resolvers = {
             }
             throw new AuthenticationError('You need to be logged in!')
         },
+        updateInvoice: async (parent, {id, amount, currency, dueDate, Paid}, context) => {
+            return await Invoice.findOneAndUpdate(
+                {_id:id},
+            )
+        }
 
     }
 };
