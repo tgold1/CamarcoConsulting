@@ -16,12 +16,17 @@ export const QUERY_PROJECTS = gql`
     query getProjects {
         projects {
             _id
-            title: String
-            description: String
-            startDate: Date
-            endDate: Date
-            customer: [User]!
-        }
+            title
+            description
+            startDate
+            endDate
+            customer {
+                _id
+                username
+                email 
+                password 
+            }
+        }  
     }
 `;
 
@@ -29,12 +34,17 @@ export const QUERY_INVOICES = gql`
     query getInvoices($userId: ID!) {
         invoice(invoiceId: $invoiceId) {
             _id
-            amount: Number
-            currency: String
-            dueDate: Date
-            paid: Boolean
-            stripePaymentIntentId: String
-            employee: [User]!
+            amount
+            currency
+            dueDate
+            paid
+            stripePaymentIntentId
+            employee {
+                _id
+                username
+                email 
+                password 
+            }
         }
     }
 `;
