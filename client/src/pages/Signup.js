@@ -15,7 +15,7 @@ const Signup = () => {
     // const [addUser, {error, data}] = useMutation(ADD_USER);
 
     const handleChange = (event) => {
-        const { name, value } = event.tartget;
+        const { name, value } = event.target;
 
         setFormState({
             ...formState,
@@ -44,7 +44,7 @@ const Signup = () => {
             <div className="card">
               <h4 className="card-header bg-dark text-light p-2">Sign Up</h4>
               <div className="card-body">
-                 {/* {data ? (
+                 {data ? (
                   <p>
                     Success! You may now head{' '}
                     <Link to="/">back to the homepage.</Link>
@@ -88,8 +88,8 @@ const Signup = () => {
                 {error && (
                   <div className="my-3 p-3 bg-danger text-white">
                     {error.message}
-                  </div> */}
-               {/* )} */}
+                  </div> 
+                )}
               </div>
             </div>
           </div>
