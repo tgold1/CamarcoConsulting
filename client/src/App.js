@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+import './index.css';
 import React from 'react';
 import {
   ApolloClient,
@@ -54,7 +55,7 @@ function App() {
                 path='/'
                 element={<Home />}
               />
-              <Route
+              {/* <Route
                  path='/login'
                  element={<Login />}
               />
@@ -65,7 +66,7 @@ function App() {
               <Route
                  path='/contact'
                  element={<Contact />}
-              />
+              // / */}
               <Route
                  path='/casestudies'
                  element={<Casestudies />}
