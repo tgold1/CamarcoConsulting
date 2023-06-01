@@ -17,7 +17,7 @@ const projectSchema = new Schema({
     type: Date,
     required: true,
   },
-  company: {
+  customer: {
     type: Schema.Types.ObjectId,
     ref: 'User',
     required: true,
