@@ -22,6 +22,7 @@ const invoiceSchema = new Schema({
   paid: {
     type: Boolean,
     default: false,
+    required:true
   },
   stripePaymentIntentId: {
     type: String,
