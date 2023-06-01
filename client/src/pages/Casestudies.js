@@ -5,29 +5,28 @@ import React from 'react';
 const CaseStudies = () => {
   const caseStudiesData = [
     {
-      title: 'Case Study 1',
-      description: 'Description of case study 1',
-      // image: 'image-url-1.jpg',
+      title: 'Example Case Study',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed volutpat odio blandit, semper ante at, luctus libero. Quisque tincidunt ex diam, luctus fermentum neque iaculis sed. Donec cursus, quam vehicula elementum gravida, felis ex pulvinar mi, eu feugiat magna diam sit amet ante. Vestibulum elit lectus, pulvinar quis lacus ut, suscipit commodo nisi. ',
+      image: require('../images/logo.png'),
     
     },
     {
-      title: 'Case Study 2',
-      description: 'Description of case study 2',
-      // image: 'image-url-2.jpg',
+      title: 'Example Case Study',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed volutpat odio blandit, semper ante at, luctus libero. Quisque tincidunt ex diam, luctus fermentum neque iaculis sed. Donec cursus, quam vehicula elementum gravida, felis ex pulvinar mi, eu feugiat magna diam sit amet ante. Vestibulum elit lectus, pulvinar quis lacus ut, suscipit commodo nisi.',
+      image: require('../images/logo.png')
       
     },
   ];
 
   return (
     <main>
-      <h1>Case Studies</h1>
+ 
       {caseStudiesData.map((caseStudy, index) => (
         <div key={index}>
           <h2>{caseStudy.title}</h2>
           <img src={caseStudy.image} alt={caseStudy.title} />
           <p>{caseStudy.description}</p>
-          <a href={caseStudy.link}>Read More</a>
-        </div>
+           </div>
       ))}
     </main>
   );

@@ -63,7 +63,7 @@ const Header = () => {
             </div>
             <div className='col w-25 p-3'>
               <Link className="text-light" to="/casestudies">
-                <h2 className="m-0">Casestudies</h2>
+                <h2 className="m-0">Case Studies</h2>
               </Link>
             </div>
           </div>
