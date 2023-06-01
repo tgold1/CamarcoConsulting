@@ -66,8 +66,8 @@ function App() {
               <Route
                  path='/contact'
                  element={<Contact />}
-              // // /
-              // <Route
+              />
+              <Route
                  path='/casestudies'
                  element={<Casestudies />}
               />
