@@ -18,6 +18,12 @@ db.once('open', async () => {
             email: "ETDinc.com",
             password: "PassWord4567",
             userRole: 'false'
+        },
+        {
+            username: "fngEmploy",
+            email: "fngEmploy@yahoo.com",
+            password: "PassWord2345",
+            userRole: 'false'
         }
     ])
 
@@ -31,7 +37,14 @@ db.once('open', async () => {
             description: "test website to safely test future applications",
             startDate: "2023-06-06",
             endDate: "2023-07-24",
-            company: users[1]._id
+            customer: users[1]._id
+        },
+        {
+            title: "Project Meteor",
+            description: "to free the Space Colonies",
+            startDate: "2023-06-06",
+            endDate: "2023-09-24",
+            customer: users[1]._id 
         }
     ])
 
@@ -45,7 +58,15 @@ db.once('open', async () => {
             amount: 3600,
             currency: 'USD',
             dueDate: '2023-07-24',
-            paid:'false',
+            paid: 'false',
+            employee: users[0]._id
+        },
+        {
+            project: projects[0]._id,
+            amount: 8000,
+            currency: 'USD',
+            dueDate: '2023-09-24',
+            paid: 'false',
             employee: users[0]._id
         }
     ])
