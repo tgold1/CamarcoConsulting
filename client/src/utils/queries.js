@@ -24,3 +24,17 @@ export const QUERY_PROJECTS = gql`
         }
     }
 `;
+
+export const QUERY_INVOICES = gql`
+    query getInvoices($userId: ID!) {
+        invoice(invoiceId: $invoiceId) {
+            _id
+            amount: Number
+            currency: String
+            dueDate: Date
+            paid: Boolean
+            stripePaymentIntentId: String
+            employee: [User]!
+        }
+    }
+`;
