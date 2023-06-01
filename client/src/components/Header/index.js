@@ -46,17 +46,17 @@ const Header = () => {
           <div className='row mx-auto text-center font-weight-bold custom-text' style={{width:'200px'}}><h1>Camarco</h1></div>
 
           <div className='row'>
-            <div className='col border-right w-10 p-3'>
+            <div className='col w-25 p-3 border-right'>
               <Link className="text-light" to="/">
                 <h2 className="m-0">Home</h2>
               </Link>
             </div>
-            <div className='col  border-right w-10 p-3'>
+            <div className='col w-25 p-3 border-right'>
               <Link className="text-light" to="/contact">
                 <h2 className="m-0">Contact</h2>
               </Link>
             </div>
-            <div className='col border-right w-25 p-3'>
+            <div className='col w-25 p-3 border-right'>
               <Link className="text-light" to="/services">
                 <h2 className="m-0">Services</h2>
               </Link>

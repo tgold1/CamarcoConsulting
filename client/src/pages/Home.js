@@ -6,9 +6,9 @@ const Home = () => {
       <div className='container d-flex flex-wrap align-item-center'>
         {/* <div class="row"> */}
         {/* <div class="col-sm-4"> */}
-        <section className='card bg-white text-black' id="services">
+        <section className='cardA border border-0 bg-white text-black align-items-center' id="services">
           <div className='card-body'>
-            <h2 className='card-title'>Services</h2>
+            <h2 className='card-title glow-text'>Services</h2>
             <p className='card-text'>
               At Camarco Consulting LLC, we offer a range of consulting and advisory services to businesses in various industries. Our services include:
             </p>
@@ -63,9 +63,9 @@ const Home = () => {
         </div>
         {/* <div class="container"> */}
         <div class="col-sm-4">
-          <section className='cardA border border-0 align-item-center' id="approach">
+          <section className='card bg-white text-black' id="approach">
             <div className='card-body'>
-              <h2 className='card-title glow-text'>Partnership with Nintex</h2>
+              <h2 className='card-title'>Partnership with Nintex</h2>
               <p className='card-text'>
                 As part of our commitment to providing cutting-edge solutions, we have partnered with Nintex, a leading provider of process automation and management solutions. This partnership allows us to offer our clients access to Nintex's advanced tools and technologies, which can significantly enhance operational efficiency, productivity, and growth in their business.
               </p>
