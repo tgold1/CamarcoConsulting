@@ -55,7 +55,7 @@ function App() {
                 path='/'
                 element={<Home />}
               />
-              {/* <Route
+              <Route
                  path='/login'
                  element={<Login />}
               />
@@ -66,8 +66,8 @@ function App() {
               <Route
                  path='/contact'
                  element={<Contact />}
-              // / */}
-              <Route
+              // // /
+              // <Route
                  path='/casestudies'
                  element={<Casestudies />}
               />
