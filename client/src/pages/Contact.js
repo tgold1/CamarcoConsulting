@@ -9,19 +9,19 @@ const Contact = () => {
     const [contactName, setContactName] = useState('');
     const [contactEmail, setContactEmail] = useState('');
 
-    const [addContact, { error }] = useMutation(ADD_CONTACT);
+    // const [addContact, { error }] = useMutation(ADD_CONTACT);
 
     const handleFormSubmit = async (event) => {
         event.preventDefault();
 
         try {
-            const { data } = await addContact({
-                variables: {
-                    contactMessage,
-                    contactEmail,
-                    contactName,
-                },
-            });
+        //     const { data } = await addContact({
+        //         variables: {
+        //             contactMessage,
+        //             contactEmail,
+        //             contactName,
+        //         },
+        //     });
             setContactMessage('')
         } catch (err) {
             console.error(err);

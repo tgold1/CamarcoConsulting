@@ -27,7 +27,7 @@ const Footer = () => {
           >
             ❤️
           </span>{' '}
-          by the Tech Thoughts team.
+          by team Tech Thoughts.
         </h4>
       </div>
     </footer>
@@ -35,3 +35,4 @@ const Footer = () => {
 };
 
 export default Footer;
+

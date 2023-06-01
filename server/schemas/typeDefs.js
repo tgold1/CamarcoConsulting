@@ -12,9 +12,9 @@ type User{
 }
 type Invoice{
     _id: ID
-    amount: Number
+    amount: Float
     currency: String
-    dueDate: Date
+    dueDate: String
     paid: Boolean
     stripePaymentIntentId: String
     employee: [User]!
@@ -23,8 +23,8 @@ type Project{
     _id: ID
     title: String
     description: String
-    startDate: Date
-    endDate: Date
+    startDate: String
+    endDate: String
     customer: [User]!
 }
 type Auth{
@@ -34,14 +34,15 @@ type Auth{
 type Query{
    Projects: [User] 
    Invoices: [User]
+   Users: [User]
 }
 type Mutation{
     addUser(username: String!, email: String!, password: String!): Auth
     login( email: String!, password: String!): Auth
-    addProject(title: String!, description: String!, startDate: Date!, endDate: Date!): Project
-    addInvoice(project: ID, amount: Number!, currency: String!, dueDate: Date!, paid: Boolean!,  ): Invoice
+    addProject(title: String!, description: String!, startDate: String!, endDate: String!): Project
+    addInvoice(project: ID, amount: Float!, currency: String!, dueDate: String!, paid: Boolean!,  ): Invoice
     removeProject(projectId: ID!): Project
-    updateInvoice( amount: Number!, currency: String!, dueDate: Date!, paid: Boolean!): Invoice
+    updateInvoice( amount: Float!, currency: String!, dueDate: String!, paid: Boolean!): Invoice
     updateUser(role: Boolean!): User
 }
 `
