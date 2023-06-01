@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 //import { ADD_CONTACT } from '../../utils/mutations.js';
 import Auth from '../utils/auth';
-import axios from 'axios'
+import axios from 'axios';
 import { validateEmail } from '../utils/helpers';
 
 
