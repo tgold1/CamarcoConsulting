@@ -3,15 +3,21 @@ import React from 'react';
 const Services = () => {
     return (
         <main>
-            <section>
-                <h1> Consultation </h1>
-                <p>We offer free consultation to understand your needs and explore how our services can assist your business.
-                    Our team of experienced consultants will take the time to listen to your goals and challenges, providing personalized advice and recommendations.
-                    Whether you're looking to improve efficiency, implement new technologies, or enhance your overall business strategy, we're here to help.
-                    During the consultation, we'll discuss potential solutions and determine if we're a good fit for your requirements.
-                    We believe in building strong partnerships with our clients and ensuring that our services align with their objectives.
-                </p>
-            </section>
+            <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                    <section className='card bg-white text-black align-items-center'>
+                        <div className='card-body'>
+                            <h1 className='card-title'> Consultation </h1>
+                            <p>We offer free consultation to understand your needs and explore how our services can assist your business.
+                                Our team of experienced consultants will take the time to listen to your goals and challenges, providing personalized advice and recommendations.
+                                Whether you're looking to improve efficiency, implement new technologies, or enhance your overall business strategy, we're here to help.
+                                During the consultation, we'll discuss potential solutions and determine if we're a good fit for your requirements.
+                                We believe in building strong partnerships with our clients and ensuring that our services align with their objectives.
+                            </p>
+                        </div>
+                    </section>
+                </div>
+            </div>
             <section>
                 <h1> Business Process Transformation </h1>
                 <p> Our business process transformation service aims to optimize and streamline your company's workflows and operations. We work closely with your team to analyze existing processes, identify bottlenecks, and implement efficient solutions.Through process mapping, automation, and workflow redesign, we help you achieve greater productivity and cost-effectiveness.
@@ -53,8 +59,7 @@ const Services = () => {
                     In cases where the issue requires further assistance, we have direct channels to connect with Nintex support to escalate and resolve complex problems.Our goal is to ensure the smooth functioning of your Nintex processes and help you overcome any obstacles along the way.
                 </p>
             </section>
-
-        </main>
+        </main >
 
     )
 }
