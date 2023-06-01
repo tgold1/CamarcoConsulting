@@ -29,12 +29,12 @@ const invoiceSchema = new Schema({
     required: true
   },
   stripePaymentIntentId: {
-    type: String,
+    type: String
   },
   employee: [{
     type: Schema.Types.ObjectId,
     ref: 'User',
-    required: true,
+    required: true
   }]
 });
 
