@@ -31,8 +31,8 @@ export const QUERY_PROJECTS = gql`
 `;
 
 export const QUERY_INVOICES = gql`
-  query Invoices($userId: ID!) {
-    Invoices(invoiceId: $invoiceId) {
+  query Invoices{
+    Invoices{
       _id
       company
       amount
@@ -50,8 +50,9 @@ export const QUERY_INVOICES = gql`
   }
 `;
 
+
 export const QUERY_ME = gql`
-  {
+ query me {
     me {
       _id
       username

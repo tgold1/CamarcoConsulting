@@ -6,24 +6,27 @@ const { User, Project, Invoice } = require('../models')
 db.once('open', async () => {
     await User.deleteMany();
 
-    const users = await User.insertMany([
+    const users = await User.create([
         {
             username: "Admin",
             email: "mickey@camarcoconsulting.com",
             password: "PassWord1234",
-            userRole: 'true'
+            userRole: 'true',
+            company: "test1"
         },
         {
             username: "ETDinc",
             email: "ETDinc@yahoo.com",
             password: "PassWord4567",
-            userRole: 'false'
+            userRole: 'false',
+            company: "2"
         },
         {
             username: "fngEmploy",
             email: "fngEmploy@yahoo.com",
             password: "PassWord2345",
-            userRole: 'false'
+            userRole: 'false',
+            company: "test3"
         }
     ])
 
@@ -37,14 +40,16 @@ db.once('open', async () => {
             description: "test website to safely test future applications",
             startDate: "2023-06-06",
             endDate: "2023-07-24",
-            customer: users[1]._id
+            customer: users[1]._id,
+            company: "1"
         },
         {
             title: "Project Meteor",
             description: "to free the Space Colonies",
             startDate: "2023-06-06",
             endDate: "2023-09-24",
-            customer: users[1]._id 
+            customer: users[1]._id,
+            company: "2" 
         }
     ])
 
@@ -59,7 +64,8 @@ db.once('open', async () => {
             currency: 'USD',
             dueDate: '2023-07-24',
             paid: 'false',
-            employee: users[0]._id
+            employee: users[0]._id,
+            company: "1"
         },
         {
             project: projects[0]._id,
@@ -67,7 +73,8 @@ db.once('open', async () => {
             currency: 'USD',
             dueDate: '2023-09-24',
             paid: 'false',
-            employee: users[0]._id
+            employee: users[0]._id,
+            company: "12"
         }
     ])
 
