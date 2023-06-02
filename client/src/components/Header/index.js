@@ -43,27 +43,27 @@ const Header = () => {
             </div>
           </div>
 
-          <div className='row mx-auto text-center font-weight-bold custom-text' style={{width:'200px'}}><h1>Camarco</h1></div>
+          <div className='row mx-auto' style={{width:'400px'}}><h1 className='display-1 text-center' style={{height:'100px'}}>Camarco</h1></div>
 
-          <div className='row'>
+          <div className='row mx-auto'style={{width:'900px'}}>
             <div className='col w-25 p-3 border-right'>
               <Link className="text-light" to="/">
-                <h2 className="m-0">Home</h2>
+                <h2 className="m-0 text-center">Home</h2>
               </Link>
             </div>
             <div className='col w-25 p-3 border-right'>
               <Link className="text-light" to="/contact">
-                <h2 className="m-0">Contact</h2>
+                <h2 className="m-0 text-center">Contact</h2>
               </Link>
             </div>
             <div className='col w-25 p-3 border-right'>
               <Link className="text-light" to="/services">
-                <h2 className="m-0">Services</h2>
+                <h2 className="m-0 text-center">Services</h2>
               </Link>
             </div>
             <div className='col w-25 p-3'>
               <Link className="text-light" to="/casestudies">
-                <h2 className="m-0">Case Studies</h2>
+                <h2 className="m-0 text-center">Case Studies</h2>
               </Link>
             </div>
           </div>
