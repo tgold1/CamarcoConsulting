@@ -95,7 +95,7 @@ function App() {
                  element={<Services />}
               />
                <Route
-                 path='/profile'
+                 path='/me'
                  element={<Profile />}
               />
 
