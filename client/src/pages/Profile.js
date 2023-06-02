@@ -26,7 +26,7 @@ const Profile = () => {
                     <p>{userData.company}</p>
 
                     {/* maps for projects per user */}
-                    {userData.projects.map(project => {
+                    {/* {userData.projects.map(project => {
                         return (
                             <div>
                                 <p>{project.title}</p>
@@ -35,18 +35,18 @@ const Profile = () => {
                                 <p>{project.endDate}</p>
                             </div>
                         )
-                    })}
+                    })} */}
                     {/* maps for invoices per project/user */}
-                    {userData.invoices.map(invoice => {
+                    {/* {userData.invoices.map(invoice => {
                         return (
                             <div>
                                 <p>{invoice.company}</p>
-                                <p>{invoice.currency}</p>                       amount
+                                <p>{invoice.currency}</p>                       
                                 <p>{invoice.dueDate}</p>
                                 <p>{invoice.paid}</p>
                             </div>
                         )
-                    })}
+                    })} */}
                 </div>
 
             

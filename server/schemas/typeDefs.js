@@ -13,7 +13,6 @@ type User{
 }
 type Invoice{
     _id: ID
-    company: String
     amount: Float
     currency: String
     dueDate: String
@@ -38,7 +37,7 @@ type Query{
    Projects: [User] 
    Invoices: [User]
    Users: [User]
-   me: User
+   me: [User]
 }
 type Mutation{
     addUser(username: String!, email: String!,  company: String!, password: String!): Auth

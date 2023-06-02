@@ -12,21 +12,21 @@ db.once('open', async () => {
             email: "mickey@camarcoconsulting.com",
             password: "PassWord1234",
             userRole: 'true',
-            company: "test1"
+            company: "Camarco Consulting"
         },
         {
             username: "ETDinc",
             email: "ETDinc@yahoo.com",
             password: "PassWord4567",
             userRole: 'false',
-            company: "2"
+            company: "ETDinc"
         },
         {
             username: "fngEmploy",
             email: "fngEmploy@yahoo.com",
             password: "PassWord2345",
             userRole: 'false',
-            company: "test3"
+            company: "Camarco Consulting"
         }
     ])
 
@@ -34,14 +34,14 @@ db.once('open', async () => {
 
     await Project.deleteMany();
 
-    const projects = await Project.insertMany([
+    const projects = await Project.create([
         {
             title: "test website",
             description: "test website to safely test future applications",
             startDate: "2023-06-06",
             endDate: "2023-07-24",
             customer: users[1]._id,
-            company: "1"
+            company: users[1].company
         },
         {
             title: "Project Meteor",
@@ -49,7 +49,7 @@ db.once('open', async () => {
             startDate: "2023-06-06",
             endDate: "2023-09-24",
             customer: users[1]._id,
-            company: "2" 
+            company: users[1].company 
         }
     ])
 
@@ -57,7 +57,7 @@ db.once('open', async () => {
 
     await Invoice.deleteMany()
 
-    const invoices = await Invoice.insertMany([
+    const invoices = await Invoice.create([
         {
             project: projects[0]._id,
             amount: 3600,
@@ -65,7 +65,6 @@ db.once('open', async () => {
             dueDate: '2023-07-24',
             paid: 'false',
             employee: users[0]._id,
-            company: "1"
         },
         {
             project: projects[0]._id,
@@ -74,7 +73,6 @@ db.once('open', async () => {
             dueDate: '2023-09-24',
             paid: 'false',
             employee: users[0]._id,
-            company: "12"
         }
     ])
 
