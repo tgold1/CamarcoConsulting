@@ -1,58 +1,58 @@
 import React from 'react';
-import { useMutation, useQuery } from '@apollo/client';
-import { QUERY_ME, QUERY_PROJECTS, QUERY_INVOICES } from '../utils/queries';
+import { useQuery } from '@apollo/client';
+import { QUERY_ME } from '../utils/queries';
 
 const Profile = () => {
-    const {loading, data} = useQuery(QUERY_ME)
-    // const [loading, data] = useQuery(QUERY_ME, QUERY_PROJECTS, QUERY_INVOICES)
-    // const [loading, data] = useQuery( QUERY_INVOICES)
-
-    const userData = data?.me || {}
-
+    const { loading, data, error } = useQuery(QUERY_ME); // Added error property
 
     if (loading) {
-        return <h1>*LOADING*</h1>
+        return <h1>Loading...</h1>; // Improved loading 
     }
-    if (userData) {
-        console.log(userData)
+
+    if (error) {
+        console.log(error);
+        return <h1>Error fetching data</h1>;
     }
+
+
+    const userData = data?.me || {};
 
     return (
         <div>
-            {/* Map through the user */}
-            {/* {userData.map((user, index) => ( */}
-                <div>
-                    <h2>{userData.username}</h2>
-                    <p>{userData.company}</p>
+            <h2>{userData.username}</h2>
+            <p>{userData.company}</p>
 
-                    {/* maps for projects per user */}
-                    {/* {userData.projects.map(project => {
-                        return (
-                            <div>
-                                <p>{project.title}</p>
-                                <p>{project.description} </p>
-                                <p>{project.startDate}</p>
-                                <p>{project.endDate}</p>
-                            </div>
-                        )
-                    })} */}
-                    {/* maps for invoices per project/user */}
-                    {/* {userData.invoices.map(invoice => {
-                        return (
-                            <div>
-                                <p>{invoice.company}</p>
-                                <p>{invoice.currency}</p>                       
-                                <p>{invoice.dueDate}</p>
-                                <p>{invoice.paid}</p>
-                            </div>
-                        )
-                    })} */}
-                </div>
+            <div>
+                {/* Map for projects per user */}
+                {userData.projects && userData.projects.map((project) => (
+                    <div key={project.id}>
+                        <p>{project.title}</p>
+                        <p>{project.description}</p>
+                        <p>{project.startDate}</p>
+                        <p>{project.endDate}</p>
+                    </div>
+                ))}
+                {userData.projects && userData.projects.length === 0 && (
+                    <p>No projects found</p> // Added check for empty projects array
+                )}
+            </div>
 
-            
-            {/* )} */}
+            <div>
+                {/* Map for invoices per project/user */}
+                {userData.invoices && userData.invoices.map((invoice) => (
+                    <div key={invoice.id}>
+                        <p>{invoice.company}</p>
+                        <p>{invoice.currency}</p>
+                        <p>{invoice.dueDate}</p>
+                        <p>{invoice.paid}</p>
+                    </div>
+                ))}
+                {userData.invoices && userData.invoices.length === 0 && (
+                    <p>No invoices found</p> // Added check for empty invoices array
+                )}
+            </div>
         </div>
-    )
-}
+    );
+};
 
 export default Profile;
