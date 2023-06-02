@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import './index.css';
-// import MyCarousel from './MyCarousel';
+// import ControlledCarousel from './pages/Casestudies';
 import React from 'react';
 import {
   ApolloClient,
@@ -43,26 +43,12 @@ const client = new ApolloClient({
 
 
 
-// const App = () => {
-//   return (
-//     <div>
-//       <h1>My App</h1>
-//       <MyCarousel />
-//     </div>
-//   );
-// };
-
-// export default App;
-
-
-
 function App() {
   return (
     <ApolloProvider client={client}>
       <Router>
         <div className='flex-column justify-flex start min-100-vh'>
           <Header />
-          {/* <MyCarousel /> */}
           <div className='container'>
             <Routes>
               <Route

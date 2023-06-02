@@ -1,66 +1,57 @@
-// CSS FOR CASE STUDIES = CAROUSEL
+import { useState } from 'react';
+import Carousel from 'react-bootstrap/Carousel';
+// import CaseStudies from './caseconflict';
 
-import React from 'react';
-import MyCarousel from '../components/MyCarousel';
+import ControlledCarousel from '../components/MyCarousel';
+function Casestudies() {
+  const [index, setIndex] = useState(0);
 
-
-const CaseStudies = () => {
-
-
-  const caseStudiesData = [
-    {
-      title: 'Example Case Study',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed volutpat odio blandit, semper ante at, luctus libero. Quisque tincidunt ex diam, luctus fermentum neque iaculis sed. Donec cursus, quam vehicula elementum gravida, felis ex pulvinar mi, eu feugiat magna diam sit amet ante. Vestibulum elit lectus, pulvinar quis lacus ut, suscipit commodo nisi. ',
-      image: require('../assets/images/logo.png'),
-
-    },
-    {
-      title: 'Example Case Study',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed volutpat odio blandit, semper ante at, luctus libero. Quisque tincidunt ex diam, luctus fermentum neque iaculis sed. Donec cursus, quam vehicula elementum gravida, felis ex pulvinar mi, eu feugiat magna diam sit amet ante. Vestibulum elit lectus, pulvinar quis lacus ut, suscipit commodo nisi.',
-      image: require('../assets/images/logo.png')
-
-    },
-  ];
+  const handleSelect = (selectedIndex) => {
+    setIndex(selectedIndex);
+  };
 
   return (
-    <main>
-      {/* <MyCarousel/> */}
-      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-        <ol class="carousel-indicators">
-          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-        </ol>
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img class="d-block w-100" src="../../assets/images/carosuel.png" alt="First slide" />
-          </div>
-          <div class="carousel-item">
-            <img class="d-block w-100" src="../../assets/images/carosuel.png" alt="Second slide" />
-          </div>
-          <div class="carousel-item">
-            <img class="d-block w-100" src="../../assets/images/carosuel.png" alt="Third slide" />
-          </div>
-        </div>
-        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-        </a>
-      </div>
-      {/* {caseStudiesData.map((caseStudy, index) => (
-        <div key={index}>
-          <h2>{caseStudy.title}</h2>
-          <img src={caseStudy.image} alt={caseStudy.title} />
-          <p>{caseStudy.description}</p>
-        </div>
-      ))} */}
+    <ControlledCarousel/>
+    // <Carousel activeIndex={index} onSelect={handleSelect}>
+    //   <Carousel.Item>
+    //     <img
+    //       className="d-block w-100"
+    //       src="holder.js/800x400?text=First slide&bg=373940"
+    //       alt="First slide"
+    //     />
+    //     <Carousel.Caption>
+    //       <h3>First slide label</h3>
+    //       <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+    //     </Carousel.Caption>
+    //   </Carousel.Item>
+    //   <Carousel.Item>
+    //     <img
+    //       className="d-block w-100"
+    //       src="holder.js/800x400?text=Second slide&bg=282c34"
+    //       alt="Second slide"
+    //     />
 
-    </main>
+    //     <Carousel.Caption>
+    //       <h3>Second slide label</h3>
+    //       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    //     </Carousel.Caption>
+    //   </Carousel.Item>
+    //   <Carousel.Item>
+    //     <img
+    //       className="d-block w-100"
+    //       src="holder.js/800x400?text=Third slide&bg=20232a"
+    //       alt="Third slide"
+    //     />
+
+    //     <Carousel.Caption>
+    //       <h3>Third slide label</h3>
+    //       <p>
+    //         Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+    //       </p>
+    //     </Carousel.Caption>
+    //   </Carousel.Item>
+    // </Carousel>
   );
-};
+}
 
-export default CaseStudies;
+export default Casestudies;

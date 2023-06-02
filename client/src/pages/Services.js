@@ -1,5 +1,5 @@
 import React from 'react';
-import MyCarousel from '../components/MyCarousel';
+// import MyCarousel from '../components/MyCarousel';
 
 function Services() {
 
