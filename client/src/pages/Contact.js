@@ -79,51 +79,53 @@ const Contact = () => {
     return (
         <div>
             <form
-                className="flex-row justify-center justify-space-between-md align-center"
+                className="container flex-row justify-center justify-space-between-md align-center"
                 onSubmit={handleFormSubmit}
             >
-                <div className="col-12 col-lg-9">
-                    <input
-                        name="contactFirstName"
-                        placeholder="First Name"
-                        value={contactFirstName}
-                        className="form-input w-100"
-                        style={{ lineHeight: '1.5', resize: 'vertical' }}
-                        onChange={handleChange}
-                    ></input>
-                    <input
-                        name="contactLastName"
-                        placeholder="Last Name"
-                        value={contactLastName}
-                        className="form-input w-100"
-                        style={{ lineHeight: '1.5', resize: 'vertical' }}
-                        onChange={handleChange}
-                    ></input>
+                <div class="form-group">
+                    <div className="col-12 col-lg-9">
+                        <input
+                            name="contactFirstName"
+                            placeholder="First Name"
+                            value={contactFirstName}
+                            className="form-input w-100"
+                            style={{ lineHeight: '1.5', resize: 'vertical' }}
+                            onChange={handleChange}
+                        ></input>
+                        <input
+                            name="contactLastName"
+                            placeholder="Last Name"
+                            value={contactLastName}
+                            className="form-input w-100"
+                            style={{ lineHeight: '1.5', resize: 'vertical' }}
+                            onChange={handleChange}
+                        ></input>
 
-                    <input
-                        name="contactEmail"
-                        placeholder="Email"
-                        value={contactEmail}
-                        className="form-input w-100"
-                        style={{ lineHeight: '1.5', resize: 'vertical' }}
-                        onChange={handleChange}
-                    />
-                    {emailError && <p className="error-text">{emailError}</p>}
+                        <input
+                            name="contactEmail"
+                            placeholder="Email"
+                            value={contactEmail}
+                            className="form-input w-100"
+                            style={{ lineHeight: '1.5', resize: 'vertical' }}
+                            onChange={handleChange}
+                        />
+                        {emailError && <p className="error-text">{emailError}</p>}
 
-                    <textarea
-                        name="contactMessage"
-                        placeholder="Add your message..."
-                        value={contactMessage}
-                        className="form-input w-100"
-                        style={{ lineHeight: '1.5', resize: 'vertical' }}
-                        onChange={handleChange}
-                    ></textarea>
-                </div>
+                        <textarea
+                            name="contactMessage"
+                            placeholder="Add your message..."
+                            value={contactMessage}
+                            className="form-input w-100"
+                            style={{ lineHeight: '1.5', resize: 'vertical' }}
+                            onChange={handleChange}
+                        ></textarea>
+                    </div>
 
-                <div className="col-12 col-lg-3">
-                    <button className="btn btn-primary btn-block py-3" type="submit">
-                        Submit
-                    </button>
+                    <div className="col-12 col-lg-3">
+                        <button className="btn btn-primary btn-block py-3" type="submit">
+                            Submit
+                        </button>
+                    </div>
                 </div>
             </form>
 
