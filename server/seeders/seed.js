@@ -13,6 +13,9 @@ db.once('open', async () => {
             password: "PassWord1234",
             userRole: 'true',
             company: "Camarco Consulting"
+            // projects: [],
+            // invoices: []
+
         },
         {
             username: "ETDinc",
@@ -20,6 +23,8 @@ db.once('open', async () => {
             password: "PassWord4567",
             userRole: 'false',
             company: "ETDinc"
+            // projects: [],
+            // invoices: []
         },
         {
             username: "fngEmploy",
@@ -27,6 +32,8 @@ db.once('open', async () => {
             password: "PassWord2345",
             userRole: 'false',
             company: "Camarco Consulting"
+            // projects: [],
+            // invoices: []
         }
     ])
 

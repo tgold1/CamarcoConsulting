@@ -47,12 +47,13 @@ const resolvers = {
 
             return { token, user };
         },
-        addProject: async (parent, { title, description, stateDate, endDate, }, context) => {
+        // fixed startDate, was stateDate prior
+        addProject: async (parent, { title, description, startDate, endDate, }, context) => {
             if (context.user) {
                 const project = await Project.create({
                     title,
                     description,
-                    stateDate,
+                    startDate,
                     endDate,
                     company: context.user.company
                 });
@@ -101,20 +102,20 @@ const resolvers = {
             }
             throw new AuthenticationError('You need to be logged in!')
         },
+        
+        // put parameters into single object
         updateInvoice: async (parent, { id, amount, currency, dueDate, paid }, context) => {
             if (context.user && context.user.userRole) {
-                return await Invoice.findOneAndUpdate(
-                    { _id: id },
-                    { amount },
-                    { currency },
-                    { dueDate },
-                    { paid },
-                    { new: true }
+              return await Invoice.findOneAndUpdate(
+                { _id: id },
+                { amount, currency, dueDate, paid },
+                { new: true }
 
                 )
             }
         },
-        updateUser: async (parent, { id, userRole }) => {
+        // added context
+        updateUser: async (parent, { id, userRole },context) => {
             if (context.user && context.user.userRole) {
                 return await User.findOneAndUpdate(
                     { _id: id },
