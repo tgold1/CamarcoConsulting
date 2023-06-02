@@ -4,20 +4,29 @@ const { signToken } = require('../utils/auth');
 
 const resolvers = {
     Query: {
-        Projects: async () => {
-            return await User.findOne({ _id }).populate('projects')
+        Projects: async (context) => {
+            return await User.findOne({ _id:context.user._id }).populate('projects')
         },
-        Invoices: async () => {
-            return await User.findOne({ _id }).populate('invoices')
+        Invoices: async (context) => {
+            return await User.findOne({ _id:context.user._id }).populate('invoices')
         },
         Users: async () => {
             return await User.find({})
-        }
+        },
+        me: async (parent, args, context) => {
+            if (context.user) {
+              const userData = await User.findOne({ _id: context.user._id }).select('-__v -password');
+      
+              return userData;
+            }
+      
+            throw new AuthenticationError('Not logged in');
+          },
     },
 
     Mutation: {
-        addUser: async (parent, { username, email, password }) => {
-            const user = await User.create({ username, email, password });
+        addUser: async (parent, { username, email, password, company}) => {
+            const user = await User.create({ username, email, password, company });
             const token = signToken(user);
             return { token, user };
         },
@@ -45,7 +54,7 @@ const resolvers = {
                     description, 
                     stateDate, 
                     endDate, 
-                    company: context.user.company,
+                    company: context.user.company
                 });
                 await User.findOneAndUpdate(
                     {_id:context.user._id},
@@ -63,6 +72,7 @@ const resolvers = {
                     currency, 
                     dueDate, 
                     Paid, 
+                    company: context.user.company,
                     employee: context.user.employee
                 });
                 await User.findOneAndUpdate(

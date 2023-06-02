@@ -7,11 +7,13 @@ type User{
     password: String
     email: String
     userRole: Boolean
+    company: String
     projects: [Project]!
     invoices:[Invoice]!
 }
 type Invoice{
     _id: ID
+    company: String
     amount: Float
     currency: String
     dueDate: String
@@ -21,6 +23,7 @@ type Invoice{
 }
 type Project{
     _id: ID
+    company: String
     title: String
     description: String
     startDate: String
@@ -35,14 +38,15 @@ type Query{
    Projects: [User] 
    Invoices: [User]
    Users: [User]
+   me: User
 }
 type Mutation{
-    addUser(username: String!, email: String!, password: String!): Auth
+    addUser(username: String!, email: String!,  company: String!, password: String!): Auth
     login( email: String!, password: String!): Auth
-    addProject(title: String!, description: String!, startDate: String!, endDate: String!): Project
-    addInvoice(project: ID, amount: Float!, currency: String!, dueDate: String!, paid: Boolean!,  ): Invoice
+    addProject(title: String!, company: String!, description: String!, startDate: String!, endDate: String!): Project
+    addInvoice(project: ID, company: String!, amount: Float!, currency: String!, dueDate: String!, paid: Boolean!): Invoice
     removeProject(projectId: ID!): Project
-    updateInvoice( amount: Float!, currency: String!, dueDate: String!, paid: Boolean!): Invoice
+    updateInvoice( amount: Float!, company: String!, currency: String!, dueDate: String!, paid: Boolean!): Invoice
     updateUser(role: Boolean!): User
 }
 `
