@@ -19,23 +19,32 @@ const userSchema=new Schema({
         unique: true,
         match: [/.+@.+\..+/, 'Must match an email address!'],
     },
+    company:{
+        type: String,
+        required: true,
+        unique: true,
+    },
     userRole:{
         type: Boolean,
         default: false,
         required: true
-        //for detirming if the user is an employee or not
-        //falsu = not an employee
+        //for determining if the user is an employee or not
+        //false = not an employee
     },
-    projects:{
+    projects:[{
         type: Schema.Types.ObjectId,
         ref:'Project'
-    },
-    invoices:{
+    }],
+    invoices:[{
         type: Schema.Types.ObjectId,
         ref:'Invoice'
-    }
+    }]
 
-})
+});
+
+userSchema.methods.isCorrectPassword = async function (password) {
+    return await bcrypt.compare(password, this.password);
+  };
 
 userSchema.pre('save', async function(next) {
     if (this.isNew || this.isModified('password')) {

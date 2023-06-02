@@ -1,6 +1,10 @@
 const { Schema, model } = require('mongoose');
 
 const projectSchema = new Schema({
+  company :{
+    type: String,
+    required: true,
+  },
   title: {
     type: String,
     required: true,
@@ -17,11 +21,11 @@ const projectSchema = new Schema({
     type: Date,
     required: true,
   },
-  customer: {
+  customer: [{
     type: Schema.Types.ObjectId,
     ref: 'User',
     required: true,
-  },
+  }],
 });
 
 const Project = model('Project', projectSchema);
