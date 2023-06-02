@@ -15,7 +15,7 @@ db.once('open', async () => {
         },
         {
             username: "ETDinc",
-            email: "ETDinc.com",
+            email: "ETDinc@yahoo.com",
             password: "PassWord4567",
             userRole: 'false'
         },
