@@ -3,7 +3,9 @@ import { useMutation, useQuery } from '@apollo/client';
 import { QUERY_ME, QUERY_PROJECTS, QUERY_INVOICES } from '../utils/queries';
 
 const Profile = () => {
-    const [loading, data] = useQuery(QUERY_ME, QUERY_PROJECTS, QUERY_INVOICES)
+    const {loading, data} = useQuery(QUERY_ME)
+    // const [loading, data] = useQuery(QUERY_ME, QUERY_PROJECTS, QUERY_INVOICES)
+    // const [loading, data] = useQuery( QUERY_INVOICES)
 
     const userData = data?.me || {}
 
@@ -11,17 +13,20 @@ const Profile = () => {
     if (loading) {
         return <h1>*LOADING*</h1>
     }
+    if (userData) {
+        console.log(userData)
+    }
 
     return (
         <div>
             {/* Map through the user */}
-            {userData.map((user, index) => (
-                <div key={index}>
-                    <h2>{user.username}</h2>
-                    <p>{user.company}</p>
+            {/* {userData.map((user, index) => ( */}
+                <div>
+                    <h2>{userData.username}</h2>
+                    <p>{userData.company}</p>
 
                     {/* maps for projects per user */}
-                    {user.projects.map(project => {
+                    {/* {userData.projects.map(project => {
                         return (
                             <div>
                                 <p>{project.title}</p>
@@ -30,9 +35,9 @@ const Profile = () => {
                                 <p>{project.endDate}</p>
                             </div>
                         )
-                    })}
+                    })} */}
                     {/* maps for invoices per project/user */}
-                    {user.invoices.map(invoice => {
+                    {/* {userData.invoices.map(invoice => {
                         return (
                             <div>
                                 <p>{invoice.company}</p>
@@ -41,10 +46,13 @@ const Profile = () => {
                                 <p>{invoice.paid}</p>
                             </div>
                         )
-                    })}
+                    })} */}
                 </div>
 
-            ))}
+            
+            {/* )} */}
         </div>
     )
 }
+
+export default Profile;

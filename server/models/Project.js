@@ -27,6 +27,10 @@ const projectSchema = new Schema({
     ref: 'User',
     required: true,
   }],
+  invoices: [{
+    type:Schema.Types.ObjectId,
+    ref: 'Invoice'
+  }]
  
 
 });

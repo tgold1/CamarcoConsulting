@@ -19,6 +19,7 @@ import Login from './pages/Login';
 import Services from './pages/Services';
 import Contact from './pages/Contact';
 import Casestudies from './pages/Casestudies';
+import Profile from './pages/Profile';
 import Header from './components/Header';
 import Footer from './components/Footer';
 
@@ -89,6 +90,15 @@ function App() {
                  path='/services'
                  element={<Services />}
               />
+               <Route
+                 path='/services'
+                 element={<Services />}
+              />
+               <Route
+                 path='/me'
+                 element={<Profile />}
+              />
+
 
             </Routes>
           </div>
