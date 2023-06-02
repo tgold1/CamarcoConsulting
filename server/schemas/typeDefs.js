@@ -13,7 +13,6 @@ type User{
 }
 type Invoice{
     _id: ID
-    company: String
     amount: Float
     currency: String
     dueDate: String
