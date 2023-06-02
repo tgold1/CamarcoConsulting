@@ -75,6 +75,14 @@ const Signup = () => {
                   value={formState.password}
                   onChange={handleChange}
                 />
+                 <input
+                  className="form-input"
+                  placeholder="Your company"
+                  name="company"
+                  type="company"
+                  value={formState.company}
+                  onChange={handleChange}
+                />
                 <button
                   className="btn btn-block btn-primary"
                   style={{ cursor: 'pointer' }}

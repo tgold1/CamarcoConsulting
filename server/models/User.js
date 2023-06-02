@@ -41,10 +41,6 @@ const userSchema=new Schema({
     }]
 
 });
-<<<<<<< HEAD
-=======
-
->>>>>>> 1b34fb9f069184a0bb194f59932a8f5a119e7cab
 userSchema.methods.isCorrectPassword = async function (password) {
     return await bcrypt.compare(password, this.password);
   };
