@@ -5,6 +5,7 @@ const invoiceSchema = new Schema({
   company: {
     type: String,
     required: true,
+    unique: false,
   },
   project: {
     type: Schema.Types.ObjectId,
@@ -35,7 +36,7 @@ const invoiceSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: 'User',
     required: true
-  }]
+  }],
 });
 
 const Invoice = model('Invoice', invoiceSchema);

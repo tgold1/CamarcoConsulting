@@ -34,7 +34,7 @@ db.once('open', async () => {
 
     await Project.deleteMany();
 
-    const projects = await Project.insertMany([
+    const projects = await Project.create([
         {
             title: "test website",
             description: "test website to safely test future applications",
@@ -57,7 +57,7 @@ db.once('open', async () => {
 
     await Invoice.deleteMany()
 
-    const invoices = await Invoice.insertMany([
+    const invoices = await Invoice.create([
         {
             project: projects[0]._id,
             amount: 3600,

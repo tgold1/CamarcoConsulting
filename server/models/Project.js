@@ -4,6 +4,7 @@ const projectSchema = new Schema({
   company :{
     type: String,
     required: true,
+    unique: false
   },
   title: {
     type: String,
@@ -26,6 +27,8 @@ const projectSchema = new Schema({
     ref: 'User',
     required: true,
   }],
+ 
+
 });
 
 const Project = model('Project', projectSchema);
