@@ -90,6 +90,15 @@ function App() {
                  path='/services'
                  element={<Services />}
               />
+               <Route
+                 path='/services'
+                 element={<Services />}
+              />
+               <Route
+                 path='/profile'
+                 element={<Profile />}
+              />
+
 
             </Routes>
           </div>
