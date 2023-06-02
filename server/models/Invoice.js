@@ -2,11 +2,6 @@ const { Schema, model } = require('mongoose');
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 
 const invoiceSchema = new Schema({
-  company: {
-    type: String,
-    required: true,
-    unique: false,
-  },
   project: {
     type: Schema.Types.ObjectId,
     ref: 'Project',
