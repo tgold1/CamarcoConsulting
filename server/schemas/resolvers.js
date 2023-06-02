@@ -97,7 +97,6 @@ const resolvers = {
                     { _id: context.user._id },
                     { $pull: { projects: project._id } }
                 )
-                //can we have multiple awaits in one function?
                 return project
             }
             throw new AuthenticationError('You need to be logged in!')

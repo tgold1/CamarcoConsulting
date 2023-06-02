@@ -36,7 +36,7 @@ const Profile = () => {
                         return (
                             <div>
                                 <p>{invoice.company}</p>
-                                <p>{invoice.currency}</p>                       amount
+                                <p>{invoice.currency}</p>                       
                                 <p>{invoice.dueDate}</p>
                                 <p>{invoice.paid}</p>
                             </div>
