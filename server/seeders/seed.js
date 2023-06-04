@@ -14,7 +14,11 @@ db.once('open', async () => {
             userRole: 'true',
             company: "Camarco Consulting",
             projects: [],
-            invoices: []
+            invoices: [
+                {
+                    invoices: [invoices[0]._id, invoices[1]._id,]
+                }
+            ]
 
         },
         {
@@ -49,7 +53,9 @@ db.once('open', async () => {
             endDate: "2023-07-24",
             customer: users[1]._id,
             company: users[1].company,
-            invoices: []
+            invoices: [  {
+                invoices: [invoices[0]._id]
+            }]
         },
         {
             title: "Project Meteor",
@@ -58,7 +64,11 @@ db.once('open', async () => {
             endDate: "2023-09-24",
             customer: users[1]._id,
             company: users[1].company,
-            invoices: [] 
+            invoices: [
+                {
+                    invoices: [invoices[1]._id]
+                }
+            ] 
         }
     ])
 
