@@ -8,6 +8,8 @@ export const QUERY_USER = gql`
       email
       password
       company
+      projects
+      invoices
     }
   }
 `;

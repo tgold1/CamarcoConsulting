@@ -5,6 +5,7 @@ import { useState } from 'react';
 import { Modal, Button } from 'react-bootstrap';
 import { Container, Row, Col } from 'react-bootstrap';
 
+
 function ModalComponent({ show, onHide, title, content }) {
     return (
       <Modal show={show} onHide={onHide}>

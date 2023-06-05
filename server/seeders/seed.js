@@ -12,21 +12,36 @@ db.once('open', async () => {
             email: "mickey@camarcoconsulting.com",
             password: "PassWord1234",
             userRole: 'true',
-            company: "test1"
+            company: "Camarco Consulting",
+            projects: [],
+            invoices: [
+                // {
+                //     invoices: [invoices[0]._id, invoices[1]._id,]
+                // }
+            ]
+
         },
         {
             username: "ETDinc",
             email: "ETDinc@yahoo.com",
             password: "PassWord4567",
             userRole: 'false',
-            company: "2"
+            company: "ETDinc",
+            projects: [
+            //     {
+            //     projects: [projects[0]._id, projects[1]._id]
+            // }
+        ],
+            invoices: []
         },
         {
             username: "fngEmploy",
             email: "fngEmploy@yahoo.com",
             password: "PassWord2345",
             userRole: 'false',
-            company: "test3"
+            company: "Camarco Consulting",
+            projects: [],
+            invoices: []
         }
     ])
 
@@ -34,14 +49,19 @@ db.once('open', async () => {
 
     await Project.deleteMany();
 
-    const projects = await Project.insertMany([
+    const projects = await Project.create([
         {
             title: "test website",
             description: "test website to safely test future applications",
             startDate: "2023-06-06",
             endDate: "2023-07-24",
             customer: users[1]._id,
-            company: "1"
+            company: users[1].company,
+            invoices: [  
+            //     {
+            //     invoices: [invoices[0]._id]
+            // }
+        ]
         },
         {
             title: "Project Meteor",
@@ -49,7 +69,12 @@ db.once('open', async () => {
             startDate: "2023-06-06",
             endDate: "2023-09-24",
             customer: users[1]._id,
-            company: "2" 
+            company: users[1].company,
+            invoices: [
+                // {
+                //     invoices: [invoices[1]._id]
+                // }
+            ] 
         }
     ])
 
@@ -57,7 +82,7 @@ db.once('open', async () => {
 
     await Invoice.deleteMany()
 
-    const invoices = await Invoice.insertMany([
+    const invoices = await Invoice.create([
         {
             project: projects[0]._id,
             amount: 3600,
@@ -65,7 +90,6 @@ db.once('open', async () => {
             dueDate: '2023-07-24',
             paid: 'false',
             employee: users[0]._id,
-            company: "1"
         },
         {
             project: projects[0]._id,
@@ -74,11 +98,17 @@ db.once('open', async () => {
             dueDate: '2023-09-24',
             paid: 'false',
             employee: users[0]._id,
-            company: "12"
         }
     ])
 
     console.log('invoices seeded')
+
+    await User.findByIdAndUpdate({_id: users[0]._id}, { $push: { invoices: invoices[0]} })
+    await User.findByIdAndUpdate({_id: users[0]._id}, { $push: { invoices: invoices[1]} })
+
+    await User.findByIdAndUpdate({_id: users[1]._id}, { $push: { projects: projects[0]} })
+    await User.findByIdAndUpdate({_id: users[1]._id}, { $push: { projects: projects[1]} })
+
 
     process.exit()
 

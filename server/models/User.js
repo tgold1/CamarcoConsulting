@@ -22,7 +22,7 @@ const userSchema=new Schema({
     company:{
         type: String,
         required: true,
-        unique: true,
+        unique: false,
     },
     userRole:{
         type: Boolean,
@@ -41,7 +41,6 @@ const userSchema=new Schema({
     }]
 
 });
-
 userSchema.methods.isCorrectPassword = async function (password) {
     return await bcrypt.compare(password, this.password);
   };
