@@ -1,6 +1,7 @@
 import React from 'react';
 import { useQuery } from '@apollo/client';
 import { QUERY_ME } from '../utils/queries';
+import ProjectForm from '../components/NewProject';
 
 const Profile = () => {
     const { loading, data, error } = useQuery(QUERY_ME); // Added error property
@@ -50,6 +51,12 @@ const Profile = () => {
                 {userData.invoices && userData.invoices.length === 0 && (
                     <p>No invoices found</p> // Added check for empty invoices array
                 )}
+            </div>
+
+            <div
+            className="col-12 col-md-10 mb-3 p-3"
+            style={{ border: '1px dotted #1a1a1a' }}>
+                <ProjectForm/>
             </div>
         </div>
     );
