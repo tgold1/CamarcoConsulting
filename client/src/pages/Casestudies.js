@@ -1,48 +1,58 @@
-import React from 'react';
-import MyCarousel from '../components/MyCarousel';
+import { useState } from 'react';
+import Carousel from 'react-bootstrap/Carousel';
+// import CaseStudies from './caseconflict';
 
-const CaseStudies = () => {
-  const caseStudiesData = [
-    {
-      title: 'Example Case Study',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed volutpat odio blandit, semper ante at, luctus libero. Quisque tincidunt ex diam, luctus fermentum neque iaculis sed. Donec cursus, quam vehicula elementum gravida, felis ex pulvinar mi, eu feugiat magna diam sit amet ante. Vestibulum elit lectus, pulvinar quis lacus ut, suscipit commodo nisi.',
-      image: require('../assets/images/logo.png'),
-    },
-    {
-      title: 'Example Case Study',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed volutpat odio blandit, semper ante at, luctus libero. Quisque tincidunt ex diam, luctus fermentum neque iaculis sed. Donec cursus, quam vehicula elementum gravida, felis ex pulvinar mi, eu feugiat magna diam sit amet ante. Vestibulum elit lectus, pulvinar quis lacus ut, suscipit commodo nisi.',
-      image: require('../assets/images/logo.png'),
-    },
-  ];
+import ControlledCarousel from '../components/MyCarousel';
+function Casestudies() {
+  const [index, setIndex] = useState(0);
+
+  const handleSelect = (selectedIndex) => {
+    setIndex(selectedIndex);
+  };
 
   return (
-    <main>
-      <div id="carouselExampleIndicators" className="carousel slide" data-ride="carousel">
-        <ol className="carousel-indicators">
-          <li data-target="#carouselExampleIndicators" data-slide-to="0" className="active"></li>
-          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-        </ol>
-        <div className="carousel-inner">
-          {/* Mapping over caseStudiesData and rendering carousel items */}
-          {caseStudiesData.map((caseStudy, index) => (
-            <div className={`carousel-item ${index === 0 ? 'active' : ''}`} key={index}>
-              <h2>{caseStudy.title}</h2>
-              <img className="d-block w-100" src={caseStudy.image} alt={caseStudy.title} />
-              <p>{caseStudy.description}</p>
-            </div>
-          ))}
-        </div>
-        <a className="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-          <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span className="sr-only">Previous</span>
-        </a>
-        <a className="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-          <span className="carousel-control-next-icon" aria-hidden="true"></span>
-          <span className="sr-only">Next</span>
-        </a>
-      </div>
-    </main>
-  );
-};
+    <ControlledCarousel/>
+    // <Carousel activeIndex={index} onSelect={handleSelect}>
+    //   <Carousel.Item>
+    //     <img
+    //       className="d-block w-100"
+    //       src="holder.js/800x400?text=First slide&bg=373940"
+    //       alt="First slide"
+    //     />
+    //     <Carousel.Caption>
+    //       <h3>First slide label</h3>
+    //       <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+    //     </Carousel.Caption>
+    //   </Carousel.Item>
+    //   <Carousel.Item>
+    //     <img
+    //       className="d-block w-100"
+    //       src="holder.js/800x400?text=Second slide&bg=282c34"
+    //       alt="Second slide"
+    //     />
 
-export default CaseStudies;
+    //     <Carousel.Caption>
+    //       <h3>Second slide label</h3>
+    //       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    //     </Carousel.Caption>
+    //   </Carousel.Item>
+    //   <Carousel.Item>
+    //     <img
+    //       className="d-block w-100"
+    //       src="holder.js/800x400?text=Third slide&bg=20232a"
+    //       alt="Third slide"
+    //     />
+
+    //     <Carousel.Caption>
+    //       <h3>Third slide label</h3>
+    //       <p>
+    //         Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+    //       </p>
+    //     </Carousel.Caption>
+    //   </Carousel.Item>
+    // </Carousel>
+  );
+}
+
+export default Casestudies;
+
