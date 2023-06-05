@@ -88,7 +88,7 @@ const ProjectForm = () => {
                         <div className="col-12 col-lg-12">
                             <textarea
                                 name="description"
-                                placeholder="Describe your Project here"
+                                placeholder="Project Description"
                                 value={description}
                                 className="form-input w-100"
                                 style={{ lineHeight: '1.5', resize: 'vertical' }}
@@ -99,7 +99,7 @@ const ProjectForm = () => {
                         <div className="col-12 col-lg-8">
                             <textarea
                                 name="title of project"
-                                placeholder="Title here"
+                                placeholder="Project Title"
                                 value={title}
                                 className="form-input w-100"
                                 style={{ lineHeight: '1.5', resize: 'vertical' }}
@@ -110,7 +110,7 @@ const ProjectForm = () => {
                         <div className="col-12 col-lg-8">
                             <textarea
                                 name="startDate"
-                                placeholder="when do you want this project to begin?"
+                                placeholder="Start Date"
                                 value={startDate}
                                 className="form-input w-100"
                                 style={{ lineHeight: '1.5', resize: 'vertical' }}
@@ -121,7 +121,7 @@ const ProjectForm = () => {
                         <div className="col-12 col-lg-8">
                             <textarea
                                 name="endDate"
-                                placeholder="When would you like your project finished by?"
+                                placeholder="End Date"
                                 value={endDate}
                                 className="form-input w-100"
                                 style={{ lineHeight: '1.5', resize: 'vertical' }}
@@ -132,7 +132,7 @@ const ProjectForm = () => {
                         <div className="col-12 col-lg-8">
                             <textarea
                                 name="company"
-                                placeholder="What company do you belong to?"
+                                placeholder="Company Name"
                                 value={company}
                                 className="form-input w-100"
                                 style={{ lineHeight: '1.5', resize: 'vertical' }}
