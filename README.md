@@ -16,18 +16,17 @@ The website being designed for Camarco Consulting LLC is a MERN stack single-pag
 
 ## Installation Instructions
 
-To install the necessary dependencies, navigate to the project root directory and run the following command:
-
-`npm install`
+Upon opening the application you will be taken to the homepage, where you have the opportunity to sign in or sign up. You will also have the ability to see what Camaraco consulting has to offer your company. There is a  casestudies tab and a services tab as well as a contact form.
 
 
 ## Usage Information
 
-To start the application, run the following command:
+The deployed link is: https://sleepy-cliffs-60033.herokuapp.com/
 
-`npm start`
+![Alt text](./client/src/assets/images/screenshot.png)
 
-The application will be accessible at http://localhost:3000.
+
+
 
 ## License
 
@@ -35,7 +34,7 @@ This project is not licensed.
 
 ## Contribution Guidelines
 
-Contributions to this project are currently not open.
+Mickey - mcamarco  Adam - CrowTrooper202  Brooke White 
 
 ## Test Instructions
 
@@ -60,8 +59,6 @@ To run the tests for this application, use the following command:
 
 `npm test`
 
-## Deployed Link
-https://desolate-reef-58395.herokuapp.com/
 
 
 ## Questions
