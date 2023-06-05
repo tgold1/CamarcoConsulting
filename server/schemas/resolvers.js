@@ -5,10 +5,10 @@ const { signToken } = require('../utils/auth');
 const resolvers = {
     Query: {
         Projects: async (context) => {
-            return await User.findOne({ _id: context.user._id }).populate('projects')
+            return await User.findOne({ _projects: context.user.projects }).populate('projects')
         },
         Invoices: async (context) => {
-            return await User.findOne({ _id: context.user._id }).populate('invoices')
+            return await User.findOne({ invoices: context.user.invoices }).populate('invoices')
         },
         Users: async () => {
             return await User.find({})

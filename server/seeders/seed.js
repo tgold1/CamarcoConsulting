@@ -27,7 +27,9 @@ db.once('open', async () => {
             password: "PassWord4567",
             userRole: 'false',
             company: "ETDinc",
-            projects: [],
+            projects: [{
+                projects: [projects[0]._id, projects[1]._id]
+            }],
             invoices: []
         },
         {
