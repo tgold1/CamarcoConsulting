@@ -96,9 +96,9 @@ const ProjectForm = () => {
                             ></textarea>
                         </div>
 
-                        <div className="col-12 col-lg-3">
+                        <div className="col-12 col-lg-8">
                             <textarea
-                                name="title"
+                                name="title of project"
                                 placeholder="Title here"
                                 value={title}
                                 className="form-input w-100"
@@ -107,7 +107,7 @@ const ProjectForm = () => {
                             ></textarea>
                         </div>
 
-                        <div className="col-12 col-lg-3">
+                        <div className="col-12 col-lg-8">
                             <textarea
                                 name="startDate"
                                 placeholder="when do you want this project to begin?"
@@ -118,7 +118,7 @@ const ProjectForm = () => {
                             ></textarea>
                         </div>
 
-                        <div className="col-12 col-lg-3">
+                        <div className="col-12 col-lg-8">
                             <textarea
                                 name="endDate"
                                 placeholder="When would you like your project finished by?"
@@ -129,7 +129,7 @@ const ProjectForm = () => {
                             ></textarea>
                         </div>
 
-                        <div className="col-12 col-lg-3">
+                        <div className="col-12 col-lg-8">
                             <textarea
                                 name="company"
                                 placeholder="What company do you belong to?"
@@ -140,7 +140,7 @@ const ProjectForm = () => {
                             ></textarea>
                         </div>
 
-                        <div className="col-12 col-lg-12">
+                        <div className="col-12 col-lg-4">
                             <button className="btn btn-primary btn-block py-3" type="submit">
                                 Add project
                             </button>
@@ -162,6 +162,6 @@ const ProjectForm = () => {
     );
 };
 
-}
+
 
 export default ProjectForm;
