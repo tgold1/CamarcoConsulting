@@ -24,12 +24,12 @@ const Profile = () => {
 
             <div>
                 {/* Map for projects per user */}
-                {userData.projects && userData.projects.map((project) => (
-                    <div key={project._id}>
-                        <p>{project.title}</p>
-                        <p>{project.description}</p>
-                        <p>{project.startDate}</p>
-                        <p>{project.endDate}</p>
+                {userData.projects && userData.projects.map((Project) => (
+                    <div key={Project._id}>
+                        <p>{Project.title}</p>
+                        <p>{Project.description}</p>
+                        <p>{Project.startDate}</p>
+                        <p>{Project.endDate}</p>
                     </div>
                 ))}
                 {userData.projects && userData.projects.length === 0 && (
