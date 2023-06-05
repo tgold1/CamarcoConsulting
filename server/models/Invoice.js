@@ -27,11 +27,11 @@ const invoiceSchema = new Schema({
   stripePaymentIntentId: {
     type: String
   },
-  employee: [{
+  employee: {
     type: Schema.Types.ObjectId,
     ref: 'User',
     required: true
-  }],
+  },
 });
 
 const Invoice = model('Invoice', invoiceSchema);

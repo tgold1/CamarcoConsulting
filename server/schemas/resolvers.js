@@ -4,11 +4,15 @@ const { signToken } = require('../utils/auth');
 
 const resolvers = {
     Query: {
-        Projects: async (context) => {
+        Projects: async (parent, args,context) => {
+            if (context.user){
             return await User.findOne({ _id: context.user._id }).populate('projects')
+            }
         },
-        Invoices: async (context) => {
+        Invoices: async (parent, args,context) => {
+            if (context.user){
             return await User.findOne({ _id: context.user._id }).populate('invoices')
+            }
         },
         Users: async () => {
             return await User.find({})

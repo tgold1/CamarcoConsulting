@@ -25,7 +25,7 @@ const Profile = () => {
             <div>
                 {/* Map for projects per user */}
                 {userData.projects && userData.projects.map((project) => (
-                    <div key={project.id}>
+                    <div key={project._id}>
                         <p>{project.title}</p>
                         <p>{project.description}</p>
                         <p>{project.startDate}</p>
@@ -40,7 +40,7 @@ const Profile = () => {
             <div>
                 {/* Map for invoices per project/user */}
                 {userData.invoices && userData.invoices.map((invoice) => (
-                    <div key={invoice.id}>
+                    <div key={invoice._id}>
                         <p>{invoice.company}</p>
                         <p>{invoice.currency}</p>
                         <p>{invoice.dueDate}</p>

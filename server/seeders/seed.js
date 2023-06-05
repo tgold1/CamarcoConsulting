@@ -12,9 +12,13 @@ db.once('open', async () => {
             email: "mickey@camarcoconsulting.com",
             password: "PassWord1234",
             userRole: 'true',
-            company: "Camarco Consulting"
-            // projects: [],
-            // invoices: []
+            company: "Camarco Consulting",
+            projects: [],
+            invoices: [
+                {
+                    invoices: [invoices[0]._id, invoices[1]._id,]
+                }
+            ]
 
         },
         {
@@ -22,18 +26,20 @@ db.once('open', async () => {
             email: "ETDinc@yahoo.com",
             password: "PassWord4567",
             userRole: 'false',
-            company: "ETDinc"
-            // projects: [],
-            // invoices: []
+            company: "ETDinc",
+            projects: [{
+                projects: [projects[0]._id, projects[1]._id]
+            }],
+            invoices: []
         },
         {
             username: "fngEmploy",
             email: "fngEmploy@yahoo.com",
             password: "PassWord2345",
             userRole: 'false',
-            company: "Camarco Consulting"
-            // projects: [],
-            // invoices: []
+            company: "Camarco Consulting",
+            projects: [],
+            invoices: []
         }
     ])
 
@@ -48,7 +54,10 @@ db.once('open', async () => {
             startDate: "2023-06-06",
             endDate: "2023-07-24",
             customer: users[1]._id,
-            company: users[1].company
+            company: users[1].company,
+            invoices: [  {
+                invoices: [invoices[0]._id]
+            }]
         },
         {
             title: "Project Meteor",
@@ -56,7 +65,12 @@ db.once('open', async () => {
             startDate: "2023-06-06",
             endDate: "2023-09-24",
             customer: users[1]._id,
-            company: users[1].company 
+            company: users[1].company,
+            invoices: [
+                {
+                    invoices: [invoices[1]._id]
+                }
+            ] 
         }
     ])
 
