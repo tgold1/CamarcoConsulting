@@ -1,6 +1,7 @@
 import React from 'react';
 import { useQuery } from '@apollo/client';
 import { QUERY_ME } from '../utils/queries';
+import ProjectForm from '../components/NewProject';
 
 const Profile = () => {
     const { loading, data, error } = useQuery(QUERY_ME); // Added error property
@@ -24,12 +25,12 @@ const Profile = () => {
 
             <div>
                 {/* Map for projects per user */}
-                {userData.projects && userData.projects.map((project) => (
-                    <div key={project._id}>
-                        <p>{project.title}</p>
-                        <p>{project.description}</p>
-                        <p>{project.startDate}</p>
-                        <p>{project.endDate}</p>
+                {userData.projects && userData.projects.map((Project) => (
+                    <div key={Project._id}>
+                        <p>{Project.title}</p>
+                        <p>{Project.description}</p>
+                        <p>{Project.startDate}</p>
+                        <p>{Project.endDate}</p>
                     </div>
                 ))}
                 {userData.projects && userData.projects.length === 0 && (
@@ -50,6 +51,12 @@ const Profile = () => {
                 {userData.invoices && userData.invoices.length === 0 && (
                     <p>No invoices found</p> // Added check for empty invoices array
                 )}
+            </div>
+
+            <div
+            className="col-12 col-md-10 mb-3 p-3"
+            style={{ border: '1px dotted #1a1a1a' }}>
+                <ProjectForm/>
             </div>
         </div>
     );
