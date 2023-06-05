@@ -29,6 +29,12 @@
   color: #61dafb;
 }
 
+@media (min-width: 576px) {
+  .border-right {
+    border-right: 1px solid #000; /* Set your desired border style */
+  }
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -60,4 +66,15 @@
 
 .custom-text{
   font-size: 60px;
+}
+
+.circle-card {
+  width: 100px;
+  height: 150px;
+  border-radius: 50%;
+  background-color: #eaeaea;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
 }
