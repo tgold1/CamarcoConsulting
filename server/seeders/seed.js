@@ -15,9 +15,9 @@ db.once('open', async () => {
             company: "Camarco Consulting",
             projects: [],
             invoices: [
-                {
-                    invoices: [invoices[0]._id, invoices[1]._id,]
-                }
+                // {
+                //     invoices: [invoices[0]._id, invoices[1]._id,]
+                // }
             ]
 
         },
@@ -27,9 +27,11 @@ db.once('open', async () => {
             password: "PassWord4567",
             userRole: 'false',
             company: "ETDinc",
-            projects: [{
-                projects: [projects[0]._id, projects[1]._id]
-            }],
+            projects: [
+            //     {
+            //     projects: [projects[0]._id, projects[1]._id]
+            // }
+        ],
             invoices: []
         },
         {
@@ -55,9 +57,11 @@ db.once('open', async () => {
             endDate: "2023-07-24",
             customer: users[1]._id,
             company: users[1].company,
-            invoices: [  {
-                invoices: [invoices[0]._id]
-            }]
+            invoices: [  
+            //     {
+            //     invoices: [invoices[0]._id]
+            // }
+        ]
         },
         {
             title: "Project Meteor",
@@ -67,9 +71,9 @@ db.once('open', async () => {
             customer: users[1]._id,
             company: users[1].company,
             invoices: [
-                {
-                    invoices: [invoices[1]._id]
-                }
+                // {
+                //     invoices: [invoices[1]._id]
+                // }
             ] 
         }
     ])
@@ -98,6 +102,13 @@ db.once('open', async () => {
     ])
 
     console.log('invoices seeded')
+
+    await User.findByIdAndUpdate({_id: users[0]._id}, { $push: { invoices: invoices[0]} })
+    await User.findByIdAndUpdate({_id: users[0]._id}, { $push: { invoices: invoices[1]} })
+
+    await User.findByIdAndUpdate({_id: users[1]._id}, { $push: { projects: projects[0]} })
+    await User.findByIdAndUpdate({_id: users[1]._id}, { $push: { projects: projects[1]} })
+
 
     process.exit()
 
